@@ -2,6 +2,7 @@ package rocks.zipcode.formattingbookinfo;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BookInfo {
 
@@ -9,10 +10,28 @@ public class BookInfo {
 
         String path = "./src/main/books.txt";
         String outPath = "./src/main/out.txt";
+        File file = new File("./src/main/books.txt");
+
+        FileReader fr = new FileReader(path);
+        int i;
+        while ((i=fr.read())!= -1){
+            System.out.println((char) i);
+        }
+//        Scanner sc = new Scanner(file);
+//       try{
+//           while (sc.hasNextLine()){
+//               String line = sc.nextLine();
+//               System.out.println(line);
+//           }
+//           sc.close();
+//       } catch (Exception e){
+//           e.printStackTrace();
+//       }
 
     }
 
     public static String formatLine(String line) {
+        System.out.println(line);
         String formattedLine = null;
 
         return formattedLine;

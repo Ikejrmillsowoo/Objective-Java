@@ -11,6 +11,12 @@ public abstract class Account {
         this.accountBalance = accountBalance;
         this.accountNumber = accountNumber;
     }
+    public Account(String accountHolder,int accountNumber){
+        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
+    }
+
+
 
     public double getAccountBalance() {
         return this.accountBalance;
