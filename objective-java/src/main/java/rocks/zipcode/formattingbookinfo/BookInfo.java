@@ -8,25 +8,27 @@ public class BookInfo {
 
     public static void main(String[] args) throws IOException {
 
-        String path = "./src/main/books.txt";
+        String path = "books.txt";
         String outPath = "./src/main/out.txt";
-        File file = new File("./src/main/books.txt");
+        //File file = new File(path);
 
-        FileReader fr = new FileReader(path);
-        int i;
-        while ((i=fr.read())!= -1){
-            System.out.println((char) i);
-        }
-//        Scanner sc = new Scanner(file);
-//       try{
-//           while (sc.hasNextLine()){
-//               String line = sc.nextLine();
-//               System.out.println(line);
-//           }
-//           sc.close();
-//       } catch (Exception e){
-//           e.printStackTrace();
-//       }
+//        FileReader fr = new FileReader(path);
+//        int i;
+//        while ((i=fr.read())!= -1){
+//            System.out.println((char) i);
+//        }
+        StringBuilder sb = new StringBuilder();
+       try{
+           File file = new File(path);
+           Scanner sc = new Scanner(file);
+           while (sc.hasNextLine()){
+               String line = sc.nextLine();
+               System.out.println(line);
+           }
+           sc.close();
+       } catch (Exception e){
+           e.printStackTrace();
+       }
 
     }
 

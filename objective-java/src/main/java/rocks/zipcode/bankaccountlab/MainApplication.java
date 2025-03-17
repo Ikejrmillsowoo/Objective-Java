@@ -9,7 +9,7 @@ public class MainApplication {
 
     public static void main(String[] args) {
         System.out.println("Here is ATM");
-        BankAccount bankAccount = new BankAccount("",0);
+        BankAccount bankAccount = new BankAccount();
 //bankAccount.getUserInput("Top of the morning, What will you like to do? \n (1) - Create and account \n (2) - Check balance");
         bankAccount.selectOption();
     }

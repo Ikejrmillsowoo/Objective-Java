@@ -1,16 +1,17 @@
 package rocks.zipcode.bankaccountlab;
 
 import java.util.Scanner;
+import java.util.function.Function;
 
 /**
  * Created by leon on 1/10/18.
  */
-public class BankAccount extends Account {
+public class BankAccount{
 
 
-    public BankAccount(String accountHolder, int accountNumber) {
-        super(accountHolder, accountNumber);
-    }
+//    public BankAccount(String accountHolder, int accountNumber) {
+//        super(accountHolder, accountNumber);
+//    }
 
     //create userInputs
     public String getUserInput(String string){
@@ -135,17 +136,20 @@ public class BankAccount extends Account {
     //checking account balances
     public void checkCheckingAccountBalance() {
 //        CheckingAccount checkingAccount = new CheckingAccount(getAccountHolder(), num, amount);
-        System.out.println(getAccountBalance());
+        Function<Account, Double> getAccountBalance = Account::getAccountBalance;
+        System.out.println(getAccountBalance);
     }
 
     public void checkSavingsAccountBalance() {
 //        SavingsAccount savingsAccount = new SavingsAccount(name, num, amount);
-        System.out.println(getAccountBalance());
+        Function<Account, Double> getAccountBalance = Account::getAccountBalance;
+        System.out.println(getAccountBalance);
     }
 
     public void checkBusinessAccountBalance (){
 //        BusinessAccount businessAccount = new BusinessAccount();
-        System.out.println(getAccountBalance());
+        Function<Account, Double> getAccountBalance = Account::getAccountBalance;
+        System.out.println(getAccountBalance);
         }
     }
 
