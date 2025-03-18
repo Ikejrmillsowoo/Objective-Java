@@ -1,6 +1,8 @@
 package rocks.zipcode.formattingbookinfo;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -8,29 +10,21 @@ public class BookInfo {
 
     public static void main(String[] args) throws IOException {
 
-        String path = "books.txt";
+        String path = "./src/main/books.txt";
         String outPath = "./src/main/out.txt";
-        //File file = new File(path);
 
-//        FileReader fr = new FileReader(path);
-//        int i;
-//        while ((i=fr.read())!= -1){
-//            System.out.println((char) i);
-//        }
-        StringBuilder sb = new StringBuilder();
-       try{
-           File file = new File(path);
-           Scanner sc = new Scanner(file);
-           while (sc.hasNextLine()){
-               String line = sc.nextLine();
-               System.out.println(line);
-           }
-           sc.close();
-       } catch (Exception e){
-           e.printStackTrace();
-       }
+        String content = "";
+        try {
 
+            content = Files.readString(Path.of(path));
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println(content);
+        formatLine(content);
     }
+
 
     public static String formatLine(String line) {
         System.out.println(line);
